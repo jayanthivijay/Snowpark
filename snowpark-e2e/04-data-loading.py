@@ -50,14 +50,14 @@ def main():
     
     #csv_index = 0
     
-    #for file_element in range(len(csv_file_name)):
+    for file_element in range(len(csv_file_name)):
         #print(csv_local_file_path[csv_index])
         #print(csv_partition_dir[csv_index])
        
-    #    get_snowpark_session().file.put( 
-    #                    csv_local_file_path[file_element], 
-    #                    stage_location+"/"+csv_partition_dir[file_element].replace("\\","/"), 
-    #                    auto_compress=False, overwrite=True, parallel=10)
+        get_snowpark_session().file.put( 
+                        csv_local_file_path[file_element], 
+                        stage_location+"/"+csv_partition_dir[file_element].replace("\\","/"), 
+                        auto_compress=False, overwrite=True, parallel=10)
                     
         #put_result(file_element," => ",put_result[0].status)
         #print(put_result)
@@ -66,14 +66,14 @@ def main():
         
 
     #parquet_index = 0
-    #for file_element in range(len(parquet_file_name)):
+    for file_element in range(len(parquet_file_name)):
 
-    #    put_result = ( 
-    #                get_snowpark_session().file.put( 
-    #                    parquet_local_file_path[file_element], 
-    #                    stage_location+"/"+parquet_partition_dir[file_element].replace("\\","/"), 
-    #                    auto_compress=False, overwrite=True, parallel=10)
-    #                )
+        put_result = ( 
+                   get_snowpark_session().file.put( 
+                        parquet_local_file_path[file_element], 
+                        stage_location+"/"+parquet_partition_dir[file_element].replace("\\","/"), 
+                        auto_compress=False, overwrite=True, parallel=10)
+                    )
         #put_result(file_element," => ",put_result[0].status)
         #parquet_index+=1
     
